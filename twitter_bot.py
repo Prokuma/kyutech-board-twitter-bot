@@ -186,6 +186,8 @@ def main():
     task.addlecTimer()
     task.callTimer()
     task.scholarshipTimer()
+    task.concentrationTimer()
+    task.aboardTimer()
 
 if __name__ == '__main__':
     main()
