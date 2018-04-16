@@ -44,7 +44,7 @@ class Task:
         date = soup.find(class_="record-value-4").text
         faculty = soup.find(class_="record-value-109").text
         grade = soup.find(class_="record-value-111").text
-        if grade == "":
+        if str(grade) == str(""):
             grade = "全体"
         link = "https://db.jimu.kyutech.ac.jp/cgi-bin/cbdb/db.cgi?page=DBRecord&did=357&qid=all&vid=24&rid=" + post_id
         if post_id != self.previous_notice_id:
@@ -153,7 +153,7 @@ class Task:
         title = soup.find(class_="record-value-7")
         title_text = title.text
         post_id = title.attrs['id'][15:]
-        date = soup.find(class_="record-value-4")
+        date = soup.find(class_="record-value-4").text
         link = "https://db.jimu.kyutech.ac.jp/cgi-bin/cbdb/db.cgi?page=DBRecord&did=379&qid=all&vid=24&rid=" + post_id
         if post_id != self.previous_scholarship_id:
             post = "#Prokumaの掲示板BOT\n" + "集中講義 No." + str(post_id) + "\n" + str(title_text) + "\n日付：" + str(date) + "\n" + str(link)
@@ -168,7 +168,7 @@ class Task:
         title = soup.find(class_="record-value-7")
         title_text = title.text
         post_id = title.attrs['id'][15:]
-        charge = soup.find(class_="record-value-113")
+        charge = soup.find(class_="record-value-113").text
         link = "https://db.jimu.kyutech.ac.jp/cgi-bin/cbdb/db.cgi?page=DBRecord&did=372&qid=all&vid=24&rid=" + post_id
         if post_id != self.previous_scholarship_id:
             post = "#Prokumaの掲示板BOT\n" + "留学・国際関連 No." + str(post_id) + "\n" +  str(title_text) + "\n担当部署：" + str(charge) + "\n" + str(link)
